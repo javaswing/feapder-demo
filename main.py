@@ -19,7 +19,7 @@ def crawl_first():
     AirSpider爬虫
     """
     spider = FirstSpider()
-    spider.start()
+    spider.run()
     # FirstSpider().start()
 
 
@@ -28,24 +28,24 @@ def crawl_ui():
     AirSpider爬虫
     """
     spider = spiders.ui_spider.UiSpider()
-    spider.start()
+    spider.run()
     # UiSpider().start()
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser(description="测试爬虫")
+    # parser = ArgumentParser(description="测试爬虫")
+    #
+    # parser.add_argument(
+    #     "--crawl_first", action="store_true", help="First爬虫", function=crawl_first
+    # )
+    # parser.add_argument(
+    #     "--crawl_ui", action="store_true", help="UI爬虫", function=crawl_ui
+    # )
+    #
+    # parser.start()
 
-    parser.add_argument(
-        "--crawl_first", action="store_true", help="First爬虫", function=crawl_first
-    )
-    parser.add_argument(
-        "--crawl_ui", action="store_true", help="UI爬虫", function=crawl_ui
-    )
-
-    parser.start()
-
-    # crawl_first()
-    # crawl_ui()
+    crawl_first()
+    crawl_ui()
 
     # main.py作为爬虫启动的统一入口，提供命令行的方式启动多个爬虫，若只有一个爬虫，可不编写main.py
     # 将上面的xxx修改为自己实际的爬虫名
